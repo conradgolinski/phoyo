@@ -1,0 +1,12 @@
+
+$url:'../fonts/';
+@mixin font-face($name) {
+	@font-face{
+	font-family: $name;
+	src:url(#{$url}#{$name}.ttf)
+	}
+}
+
+@include font-face(GothamRoundedMedium);
+@include font-face(GothamRoundedBook);
+@include font-face(GothamRoundedBold);

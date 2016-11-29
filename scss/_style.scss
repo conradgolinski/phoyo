@@ -1,0 +1,675 @@
+// h1 - 36px
+// h2 - 30px
+// h3 - 24px
+// h4 - 18px
+// h5 - 14px
+// h6 - 12px
+
+.fa {
+		@include transition(all 0.2s ease-in);
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+.left,.right {
+	@include breakpoint(phabmob){
+		float:none;
+	}
+}
+
+.container {
+	@include breakpoint(tabmob){
+		padding-right: 5%;
+		padding-left: 5%;
+	}
+	&>* {
+		@include breakpoint(phabmob){
+			@include center-block();
+		}
+	}
+}
+
+header {
+	  background-image: url('../images/header.png');
+	  background-size: 100% 100%;
+	  width: 100%; 
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  	@include breakpoint(tabmob){
+	  		background-size: cover;
+	  	}
+	.container{
+		font-family: GothamRoundedMedium;
+		color:white;
+		display: flex;
+		align-items:center;
+		justify-content:space-between;
+		flex-direction:column; 
+	}
+	nav.navbar {
+	margin-top:5%;
+	background-color: transparent;
+	border:0;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: GothamRoundedMedium;
+	
+	ul.navbar-nav {
+		display: flex;
+		justify-content:space-around;
+		width:758px;
+			 
+			@include breakpoint(mobileonly){
+				display: none; 
+				}
+				@include breakpoint(tabmob){
+					width:458px;
+				}
+
+		img{margin-top:-10px;}	
+		li{flex:1;font-size:16px;
+
+			@include breakpoint(phabmob){
+					font-size:12px;
+					width:300px;
+				}
+		}
+		li a {
+			color:$whitesmoke;
+
+			&:hover {
+				color:$whitesmoke ;
+				
+			}
+			span {
+				&:hover{border-bottom:3px solid  $turquoise;}
+				}
+			}
+	}
+
+
+	
+}
+.nav-show {
+	.logo {
+		float:left;
+		position: absolute;
+		top:5%;
+		left:15%;
+		display: none;
+		img {
+			width:40px;
+		}
+		@include breakpoint(mobileonly){
+					display: block;
+
+				} 
+	}
+
+	
+	.hamburger {  
+				float:right;
+				position: absolute;
+				top:6%;
+				right:15%;
+				display: none;
+				@include ink(40px,40px,transparent,'',#fff,50%);
+				@include breakpoint(mobileonly){
+					display: block;
+					z-index: 5;
+				} 
+				i {
+				line-height:40px;
+				font-size:1.8em;
+				text-align:center;
+				width:40px;
+				height:40px;
+				} 
+			}
+	ul.nav{
+		opacity:0;
+		z-index:-10;
+		margin:0; 
+		display: block;
+		@include transition-duration(0.3s);
+				@include transition-timing-function(ease-in);
+		&.active {
+				@include transition-duration(0.3s);
+				@include transition-timing-function(ease-in);
+					opacity:1;
+					z-index:9;
+			}
+		
+		}
+
+		.nav-bg {
+	    position:fixed;
+	    top:0;
+	    background: #333;
+	    opacity:.94;
+	    filter:alpha(opacity=94);
+	    height:100%;
+	    width:100%;
+	    z-index:10;
+	    @include transition-duration(0.3s);
+		@include transition-timing-function(ease-in);			
+		}
+			.nav-content {
+			    position:fixed;
+			    color:#333; 
+			    width:100%;
+			    height:100%;
+			    text-align:center;
+			     z-index:11;
+			     display: flex;
+			    align-items: center;
+			    flex-direction:column;
+			    justify-content: center; 
+			    
+			    li {
+			    	 display: block;
+			    	 margin-top:2.5vh;
+			    	
+			    	a{
+			    	margin-top:2.5vh;
+			    	min-width:150px;
+			    	min-height:40px; 
+			    	cursor:pointer;
+			    	margin:0;
+			    	font-size:2em;
+			    		@include transition-duration(0.5s);
+				  		@include transition-timing-function(ease-in);
+			    	&.active,&:hover{
+			    		color:$turquoise !important;
+			    		font-size:2.2em;
+
+			    		@include transition-duration(0.5s);
+				  		@include transition-timing-function(ease-in);
+			    	
+			    		}
+			    	}
+				}
+			} 
+		.close {position:fixed;
+			right:15%;
+			top:15%;
+			z-index:12;
+	    	@include ink(40px,40px,#333,'yes',#f5f5f5,50%);
+	    		opacity:1 !important; 
+	    }
+	}
+	.container .home {  
+		
+		text-align: center;
+		margin-top: 12%;
+		h1 {text-transform: uppercase;font-weight: bold;letter-spacing: 0.6rem;font-family: GothamRoundedBold;
+			@include breakpoint(mobileonly){
+					font-size:25px;
+				}
+			}
+			h4 {
+				@include breakpoint(mobileonly){
+					font-size:16px;
+				}
+			}
+		.getstarted {margin-left:auto;margin-right:auto;
+			@include ink(166px,49px,$turquoise,'');
+			text-transform: uppercase;
+			@include breakpoint(mobileonly){
+					@include ink(126px,42px,$turquoise,'');
+				}
+			.ripplelink {  
+				@include center-block();
+				
+			}
+		}
+
+
+	}
+
+	.icons{
+		color:white;
+		font-size: 22px;
+		margin-top: 20%;
+    margin-bottom: 5%;
+	}
+
+}
+
+section#second {
+		background-color: $nearly-white;
+	.container {
+		padding-top: 5%;
+		@include breakpoint(mobileonly){
+			padding-left:0;
+			padding-right: 0;
+				}
+		.left {
+			padding-top:40px;
+			padding-right: 40px;
+			
+			h4 {
+				color:$turquoise;
+				text-transform: uppercase;
+				font-family: GothamRoundedBold;
+				max-width: 400px;
+				letter-spacing: 3px;
+			}
+			h6 {
+				padding-top:30px;
+				font-family: GothamRoundedBook;
+				line-height: 24px;
+				letter-spacing: 2.8px;
+				color:$gray-text-too;
+				span{
+					color:black;
+					font-family: GothamRoundedBold;
+				}
+			}
+			.getstarted {
+				@include ink(192px,51px,$turquoise,'');
+				h6 {
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		.right {
+
+			background-image:url('../images/hand.png');
+			background-size:auto;
+			background-position:right top;
+			min-height: 412px;
+			background-repeat: no-repeat;
+
+			@include breakpoint(phabmob){
+				margin-top: 20%;
+				background-size: cover;
+			}
+		}
+	}
+}
+
+section#third { 
+	.container {
+		padding-top:5%;
+		padding-bottom:5%;
+		.left {
+
+			@include breakpoint(phabmob){
+				margin-top: 10%;
+				background-position: top center;
+			}
+			background-image:url('../images/flatiphone.png');
+			background-size:auto;
+
+			min-height: 470px;
+			background-repeat: no-repeat;
+
+			@include breakpoint(phabmob){
+				margin-bottom: -30%;
+				margin-top: 5%;
+				background-size: auto 100%;
+			}
+		}
+		.right { 
+			padding-top:40px;
+			margin-bottom: 15%;
+			background-color: white;
+			h4 {
+				color:$turquoise;
+				text-transform: uppercase;
+				font-family: GothamRoundedBold;
+
+				letter-spacing: 3px;
+			}
+			h6 {
+				padding-top:30px;
+				font-family: GothamRoundedBook;
+				line-height: 24px;
+				letter-spacing: 2.8px;
+				color:$gray-text-too;
+				span{
+					color:black;
+					font-family: GothamRoundedBold;
+				}
+			} 
+			.learn {
+				@include ink(192px,51px,$turquoise,'');
+				width:192px;
+				height:51px;	
+				margin-top:5%;
+
+				h6 {
+					text-transform: uppercase;
+					padding:0;
+					@include breakpoint(mobileonly){
+						font-size:10px;
+					}
+				}
+				@include breakpoint(mobileonly){
+					@include ink(122px,41px,$turquoise,'');	
+					float:left;
+					width:122px;
+					height:41px;
+				}
+			}
+			.pages {
+				margin-top:5%;
+				@include breakpoint(mobileonly){
+					float:right;
+					margin:0;
+					margin-right:15%;
+				}
+				span {
+					letter-spacing: 1px;
+					font-family: GothamRoundedMedium;
+				}
+				.fa {
+					font-size:40px;
+					color:$gray-text-too;
+					width:30px;
+					height: 30px;
+					&:hover {
+						color:$turquoise;
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+section#fourth{
+	background-color: $nearly-white;
+	.container{
+		padding-bottom: 7%;
+		padding-top: 5%;
+		.right {
+			@include breakpoint(phabmob){
+				padding-top: 2%;
+				padding-right: 15px;
+				text-align: center;
+			}
+			@include breakpoint(mobileonly) {
+				padding: 0;
+			}
+			padding-right: 20px;
+			padding-bottom: 3px; 
+			.fa {
+
+					font-size:40px;
+					color:$gray-text-too;
+					width:30px;
+					height: 30px;
+					&:hover {
+						color:$turquoise;
+					}
+				}
+		}
+		.row{
+			display: flex;
+			justify-content:space-around;
+			@include breakpoint(phabmob){
+				justify-content:center;
+			}
+			
+		}
+		.col-md-4{
+				
+				background-size: 100% 100%;
+				background-position: center;
+				background-repeat: no-repeat;
+				max-height: 260px;
+				max-width: 370px;
+
+			&:nth-child(2){
+				background-image: url("../images/liv1.png");
+				
+			}
+			&:nth-child(3){
+				background-image: url("../images/liv2.png");
+			}
+		}
+
+		.col-md-3 {
+			text-align: center;
+
+
+				img {
+					margin-top:30px;
+					padding-bottom: 25px;
+				}
+
+				span {
+					font-family: GothamRoundedBold;
+					text-transform: uppercase;
+					line-height: 24px;
+					letter-spacing: 3.5px;
+					color:$darker-text;
+					font-size:16px;
+				}
+				h6 {
+					font-family: GothamRoundedMedium;
+					line-height: 18px;
+					letter-spacing: 1px;
+					color:$darker-text;
+					max-width: 155px;
+					padding-top: 20px;
+					@include center-block();
+				}
+		}
+	}
+}
+
+
+section#fifty {
+	@include bg-cover("../images/liv3.png");
+	max-height: 600px;
+	padding-top:16%;
+	padding-bottom:25%;
+
+
+					@include breakpoint(phabmob){
+						padding-top:22%;
+					}
+	.container {
+		display: flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content:center;
+		.subscribe {
+			width:470px;
+			height:100px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			text-align: center;
+
+			@include breakpoint(phabmob){
+				width: 85%;
+			}
+
+			span {
+				font-size: 24px;
+				@include breakpoint(phabmob){
+					font-size: 3vw;
+				}	
+				font-family: GothamRoundedBold;
+				color:#fff;
+			}
+			input{
+				border:0;
+				margin-left: 75px;
+				width:280px;
+				height:50px;
+				padding-left: 20px;
+				@include border-left-radius(0.3rem);
+				font-size: 16px;
+				letter-spacing: 1.5px;
+				font-family: GothamRoundedMedium;
+					@include placeholder {
+						text-transform: uppercase;
+						color:$darker-text;
+
+
+					}
+
+					@include breakpoint(phabmob){
+						margin-left: 0px;
+						width:60%;
+						height:40px;
+						font-size: 10px;
+						float: left;
+					}
+			}		
+			.left {
+				margin-top:20px;
+				@include breakpoint(phabmob){
+					margin-top: 10px;
+					margin-left:20%;
+				}
+			}
+			.send {
+				@include ink(50px,50px,$turquoise,'',#fff,0);
+				font-size:25px;
+
+
+				.ripplelink {
+					@include border-right-radius(0.3rem);
+					@include breakpoint(phabmob){
+						width:40px;
+						height: 40px;
+						font-size: 18px;
+						line-height: 40px;
+						
+					}
+				}
+			}
+
+		}
+
+	}
+}
+
+section#seventh {
+		background-color: $nearly-white;
+	.container {
+		padding-top: 5%;
+		padding-bottom: 5%;
+		text-align: center;
+		text-transform: uppercase;
+		color:$darker-text;
+		h3 {
+			font-family: GothamRoundedBold;
+			letter-spacing: 1.5px;
+
+				@include breakpoint(phabmob){
+						padding-bottom:3%;
+						
+					}
+		}
+		h5 {
+			font-family: GothamRoundedMedium;
+			max-width: 840px;
+			@include center-block();
+			line-height: 20px;
+			letter-spacing: 1px;
+			font-size:12px;
+		} 
+
+		.row {
+			max-width: 620px;
+			@include center-block();
+			margin-top:3%;
+			.left,.right {
+				@include breakpoint(phabmob){
+				display: flex;
+				justify-content:center;
+
+				}
+				.store {
+					float:left;
+					font-size: 15px;
+					@include ink(240px,50px,$lighter-turquoise,'',#fff,0);
+					text-align: center;
+					@include breakpoint(phabmob){
+						@include ink(160px,40px,$lighter-turquoise,'',#fff,0);
+					}
+					.ripplelink{
+						padding-left: 30px;
+						font-family: GothamRoundedMedium;
+						letter-spacing: 2px;
+						@include border-left-radius(0.3rem);
+						text-align: left;
+
+						@include breakpoint(phabmob){
+						padding-left: 15px;
+						padding-right: 15px;
+						}
+					}	
+					
+				}
+				.iconstore {
+					float:left;
+					font-size: 20px;
+					@include ink(50px,50px,$turquoise,'',#fff,0);
+
+					@include breakpoint(phabmob){
+						@include ink(40px,40px,$turquoise,'',#fff,0);
+					}
+					.ripplelink{@include border-right-radius(0.3rem);}
+				}
+			}
+			.right {
+				@include breakpoint(phabmob){
+					margin-top:5%;
+				}
+			}
+		}
+	}
+}
+
+footer {
+	.container{
+		padding-top: 3%;
+		padding-bottom: 3%;
+		.left {
+			span{
+				font-size: 14px;
+				font-family: GothamRoundedMedium;
+				letter-spacing: 3px;
+				text-transform: uppercase;
+				float:left;
+				line-height: 50px;
+				@include breakpoint(mobileonly){
+					font-size:12px;
+					letter-spacing: 2px;
+				}
+			}
+			.line {
+				margin-left: 5px;
+			    margin-right: 5px;
+			    margin-top: 17px;
+				height:14px;
+				background-color: $turquoise;
+				width:2px;
+				float:left;
+
+			}
+			h5 {
+				font-family: GothamRoundedMedium;
+				padding-top:20px;
+				@include breakpoint(mobileonly){
+					width:100%;
+					height:80px;
+				}
+			}
+		}
+		.right {
+			padding-right: 3%;
+			padding-top: 10px;
+
+		}
+	}
+}

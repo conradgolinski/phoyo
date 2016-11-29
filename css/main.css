@@ -6739,7 +6739,7 @@ section#second {
       section#second .container .left .getstarted h6 {
         text-transform: uppercase; }
     section#second .container .right {
-      background-image: url("../images/hand.png");
+      background-image: url("../images/Hand.png");
       background-size: auto;
       background-position: right top;
       min-height: 412px;
@@ -6753,7 +6753,7 @@ section#third .container {
   padding-top: 5%;
   padding-bottom: 5%; }
   section#third .container .left {
-    background-image: url("../images/flatiphone.png");
+    background-image: url("../images/Flatiphone.png");
     background-size: auto;
     min-height: 470px;
     background-repeat: no-repeat; }
